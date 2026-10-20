@@ -3,6 +3,10 @@ STATUS.md
 PLAN.md
 HANDOFF.md
 AI_USAGE_LOG.md
+# Internal review rounds and completion tracking (never published)
+results/G[0-9]*.md
+results/KPI.md
+src/kpi.py
 
 # Local, network-specific settings (filter markers, internal strings)
 local/
