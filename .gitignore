@@ -58,6 +58,10 @@ paper/*.out
 paper/*.bbl
 paper/*.blg
 paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.xdv
+paper/comment.cut
 *.log
 
 # Editor and OS files
