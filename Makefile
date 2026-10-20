@@ -81,7 +81,7 @@ pdf:
 check:
 	$(PY) src/check_paper.py paper
 
-site:  # static explorer for GitHub Pages (docs/, no check mode); docs/citedrift_demo.mp4 comes from src/make_video.py
+site:  # static explorer for GitHub Pages (docs/, no check mode); docs/citedrift_demo.mp4 comes from src/make_video.py + src/add_narration.py
 	cp app/static/index.html app/static/app.js app/static/style.css app/static/explorer.json docs/ && touch docs/.nojekyll
 
 # Held-out validation on the Liu et al. TRAIN split (no design choice used it; see results/KPI_preregistration.md).

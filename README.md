@@ -5,7 +5,7 @@ against the page as it was when cited and against the page today, and gets one o
 **still supported**, **content changed**, **uncertain**, **link lost**, **could not check**, **not supported when cited**.
 Everything runs locally with open models on one consumer GPU (tested on an RTX 5070, 12 GB).
 
-**Try it:** [public explorer](https://seungbum.github.io/citedrift/) · [74-second demo video](https://seungbum.github.io/citedrift/citedrift_demo.mp4)
+**Try it:** [public explorer](https://seungbum.github.io/citedrift/) · [74-second narrated demo video](https://seungbum.github.io/citedrift/citedrift_demo.mp4)
 
 - `app/` web app: static explorer of precomputed results (`app/static/`; `make site` copies it to `docs/` for GitHub Pages)
   and a local check mode (`app/server.py`).
@@ -35,6 +35,7 @@ are reported as "could not check" rather than as lost.
   Findings of EMNLP 2023 (MIT). Place the repository at `data/raw/liu2023/`.
 - Judge: MiniCheck-Flan-T5-Large (Tang, Laban & Durrett, EMNLP 2024; weights MIT, inference procedure re-implemented
   from the Apache-2.0 reference code). Explainer: Qwen2.5-7B-Instruct (Apache-2.0).
+- Video voice-over: synthetic speech from Kokoro-82M (Apache-2.0), added by `src/add_narration.py`.
 - Baseline: urlhealth 0.1.0 (Rao, Wong & Callison-Burch 2026; MIT), called unchanged with added rate limiting.
 - Current pages were fetched on 2026-10-15 and are kept locally only; they are not part of this repository.
 
