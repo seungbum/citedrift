@@ -1,7 +1,11 @@
 % Provenance (2026-10-15). Entries were obtained, not hand-written:
 %   DOI entries  : curl -sL -H "Accept: application/x-bibtex" https://doi.org/<doi>   (raw copies in bib_raw/)
 %   arXiv entries: https://arxiv.org/bibtex/<id>
-% Changes: one field per line (values unchanged); and the HTML entity "&amp;" in one title was converted to "\&".
+% Changes: one field per line; the HTML entity "&amp;" in one title was converted to "\&".
+% Final check (2026-10-20) against the publications themselves: Liu_2023 first author as printed on the paper
+% (Nelson F. Liu); Wu_2025 article number 3615 (missing in Crossref); Zerhoudi_2026 diacritic (Mitrovi\'c);
+% Klein_2014 journal name spelled as in Jones_2016; DeepTRACE cited as its ICLR 2026 version
+% (proceedings.iclr.cc), linked to its arXiv record.
 
 @inproceedings{Liu_2023,
   title={Evaluating Verifiability in Generative Search Engines},
@@ -9,7 +13,7 @@
   DOI={10.18653/v1/2023.findings-emnlp.467},
   booktitle={Findings of the Association for Computational Linguistics: EMNLP 2023},
   publisher={Association for Computational Linguistics},
-  author={Liu, Nelson and Zhang, Tianyi and Liang, Percy},
+  author={Liu, Nelson F. and Zhang, Tianyi and Liang, Percy},
   year={2023},
   pages={7001–7025}
 }
@@ -65,7 +69,7 @@
   url={http://dx.doi.org/10.1371/journal.pone.0115253},
   DOI={10.1371/journal.pone.0115253},
   number={12},
-  journal={PLoS ONE},
+  journal={PLOS ONE},
   publisher={Public Library of Science (PLoS)},
   author={Klein, Martin and Van de Sompel, Herbert and Sanderson, Robert and Shankar, Harihar and Balakireva, Lyudmila and Zhou, Ke and Tobin, Richard},
   editor={Bar-Ilan, Judit},
@@ -112,16 +116,15 @@
   publisher={Springer Science and Business Media LLC},
   author={Wu, Kevin and Wu, Eric and Wei, Kevin and Zhang, Angela and Casasola, Allison and Nguyen, Teresa and Riantawan, Sith and Shi, Patricia and Ho, Daniel and Zou, James},
   year={2025},
-  month=Apr
+  month=Apr,
+  articleno={3615}
 }
 
-@misc{venkit2025deeptraceauditingdeepresearch,
+@inproceedings{venkit2025deeptraceauditingdeepresearch,
   title={DeepTRACE: Auditing Deep Research AI Systems for Tracking Reliability Across Citations and Evidence},
   author={Pranav Narayanan Venkit and Philippe Laban and Yilun Zhou and Kung-Hsiang Huang and Yixin Mao and Chien-Sheng Wu},
-  year={2025},
-  eprint={2509.04499},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
+  booktitle={The Fourteenth International Conference on Learning Representations (ICLR 2026)},
+  year={2026},
   url={https://arxiv.org/abs/2509.04499}
 }
 
@@ -166,7 +169,7 @@
   DOI={10.1145/3774905.3793140},
   booktitle={Companion Proceedings of the ACM Web Conference 2026},
   publisher={ACM},
-  author={Zerhoudi, Saber and Dinzinger, Michael and Granitzer, Michael and Mitrovic, Jelena},
+  author={Zerhoudi, Saber and Dinzinger, Michael and Granitzer, Michael and Mitrovi{\'c}, Jelena},
   year={2026},
   month=May,
   pages={216–220}
