@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CiteDrift: do cited pages still support AI search answers?</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232a78d6'/%3E%3Cpath d='M4 8.5l2.5 2.5L12 5' stroke='white' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>CiteDrift</h1>
+  <p>Checks every statement–citation pair of an AI search answer twice: against the page as it was when it was cited,
+  and against the page today. Everything runs locally on one consumer GPU.</p>
+</header>
+<nav>
+  <button data-tab="explore" class="on">Explore 2023 → 2026</button>
+  <button data-tab="check">Check an answer</button>
+  <button data-tab="about">How it works</button>
+</nav>
+<main>
+  <section id="explore">
+    <div class="panel">
+      <div class="hero" id="hero"></div>
+    </div>
+    <div class="panel">
+      <div class="note" id="barTitle"></div>
+      <div class="legend" id="legend"></div>
+      <div class="rows" id="bars"></div>
+      <details><summary>Table view</summary><div id="table"></div></details>
+    </div>
+    <div class="filters">
+      <select id="fEngine"><option value="">All engines</option></select>
+      <select id="fClass"><option value="">All outcomes</option></select>
+      <select id="fState"><option value="">All link states</option></select>
+      <select id="fLabel"><option value="">All 2023 labels</option><option>complete_support</option><option>partial_support</option><option>no_support</option></select>
+      <input id="fText" type="search" placeholder="Search statement, query or domain">
+      <span class="count" id="count"></span>
+    </div>
+    <div id="list"></div>
+    <div class="more"><button class="act ghost hidden" id="moreBtn">Show more</button></div>
+  </section>
+
+  <section id="check" class="hidden">
+    <div class="panel">
+      <div id="checkStatus" class="note"></div>
+      <label class="f" for="answer">Answer text, with citation markers like [1] [2]</label>
+      <textarea id="answer" rows="7"></textarea>
+      <label class="f" for="urls">Cited URLs, one per line, in marker order ([1] is the first line)</label>
+      <textarea id="urls" rows="4"></textarea>
+      <div style="display:flex; gap:16px; align-items:end; flex-wrap:wrap">
+        <div style="width:220px"><label class="f" for="citedAt">Date of the answer (optional)</label>
+          <input id="citedAt" type="date"></div>
+        <label class="note"><input type="checkbox" id="explain"> explain flagged citations (Qwen2.5-7B, slower)</label>
+        <label class="note"><input type="checkbox" id="datasetThen"> use the 2023 page text saved with the Liu et al. data (if local)</label>
+        <label class="note"><input type="checkbox" id="browserCheck"> open refused pages once in a browser (slower)</label>
+        <button class="act" id="runBtn">Check citations</button>
+        <button class="act ghost" id="exampleBtn">Load an example</button>
+      </div>
+      <p class="note">With a date, the Internet Archive snapshot closest to it is used as the "then" page. Without one,
+      only today's support is judged. Pages are fetched once, on your request, by your own machine.</p>
+    </div>
+    <div id="checkOut"></div>
+  </section>
+
+  <section id="about" class="hidden">
+    <div class="panel note" id="aboutBody"></div>
+  </section>
+</main>
+<div class="tip" id="tip"></div>
+<footer id="foot"></footer>
+<script src="app.js"></script>
+</body>
+</html>

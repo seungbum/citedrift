@@ -1,0 +1,95 @@
+{
+ "n_key": 100,
+ "n_labels": 100,
+ "inspector": "independent AI agent (blind to outcomes)",
+ "away": {
+  "n": 20,
+  "current_support": {
+   "full": 2,
+   "no": 13,
+   "partial": 5
+  },
+  "evidence_now": {
+   "paraphrase": 2,
+   "absent": 16,
+   "changed": 2
+  },
+  "same_document": {
+   "same": 3,
+   "different": 17
+  }
+ },
+ "content_changed": {
+  "n": 50,
+  "current_support": {
+   "no": 8,
+   "partial": 13,
+   "full": 22,
+   "cannot_tell": 7
+  },
+  "evidence_now": {
+   "absent": 5,
+   "verbatim": 13,
+   "changed": 13,
+   "paraphrase": 12,
+   "cannot_tell": 7
+  },
+  "same_document": {
+   "same": 49,
+   "different": 1
+  }
+ },
+ "still_supported": {
+  "n": 30,
+  "current_support": {
+   "full": 30
+  },
+  "evidence_now": {
+   "verbatim": 24,
+   "paraphrase": 5,
+   "cannot_tell": 1
+  },
+  "same_document": {
+   "same": 30
+  }
+ },
+ "agreement": {
+  "content_changed_not_full": [
+   21,
+   43
+  ],
+  "content_changed_evidence_changed_or_absent": [
+   18,
+   43
+  ],
+  "still_supported_full": [
+   30,
+   30
+  ],
+  "away_different": [
+   17,
+   20
+  ],
+  "demoted_full": [
+   0,
+   0
+  ],
+  "uncertain_not_full": [
+   0,
+   0
+  ]
+ },
+ "macros": {
+  "insChangedN": "50",
+  "insChangedPrec": "21 of 43 (49\\%)",
+  "insStillN": "30",
+  "insStillAgree": "30 of 30 (100\\%)",
+  "insAwayN": "20",
+  "insAwayDifferent": "17 of 20 (85\\%)",
+  "insChangedEv": "18 of 43 (42\\%)",
+  "insDemotedN": "0",
+  "insDemotedFull": "--",
+  "insUncertainN": "0",
+  "insUncertainNotFull": "--"
+ }
+}

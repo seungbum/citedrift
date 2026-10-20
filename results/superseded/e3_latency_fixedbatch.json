@@ -1,0 +1,402 @@
+{
+ "n_answers": 20,
+ "explain": false,
+ "peak_gpu_gb": 8.164587008,
+ "gpu": "NVIDIA GeForce RTX 5070",
+ "runs": [
+  {
+   "id": "b278d4c0d9b16ce2ca711c776c9d4c0eaa702debf2eec64431652721005ad0f7-bing_chat",
+   "system": "bing_chat",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 45.89747289699153,
+   "fetch_s": 5.143210751994047,
+   "archive_s": 40.70011502801208,
+   "judge_and_rest_s": 0.054147116985404864,
+   "classes": [
+    "link_lost",
+    "link_lost"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "55f4acebe4645c564a4616c205600388cda868d7357aca757e5b090dd1313c2a-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 5,
+   "total_s": 78.0145308719948,
+   "fetch_s": 7.139756531949388,
+   "archive_s": 65.09579056993243,
+   "judge_and_rest_s": 5.778983770112973,
+   "classes": [
+    "still_supported",
+    "still_supported",
+    "still_supported",
+    "link_lost",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "lookup_failed_503",
+    "ok",
+    "no_capture",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "863f422a8da393a0c698e6770934668cf4596beea7edec423c9cb1dfd56f0726-you",
+   "system": "you",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 17.073172209988115,
+   "fetch_s": 0.8576541910006199,
+   "archive_s": 15.94637677798164,
+   "judge_and_rest_s": 0.2691412410058547,
+   "classes": [
+    "still_supported",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "ok",
+    "ok"
+   ]
+  },
+  {
+   "id": "76daa0d64bcd976cc827a17b31bea86ecaa670217c9e0c5a62eabbebe9ed0cce-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 8,
+   "total_s": 146.3135107330163,
+   "fetch_s": 44.41798527998617,
+   "archive_s": 80.76353368596756,
+   "judge_and_rest_s": 21.131991767062573,
+   "classes": [
+    "not_supported_now",
+    "still_supported",
+    "still_supported",
+    "never_supported",
+    "not_supported_now",
+    "never_supported",
+    "still_supported",
+    "still_supported"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "ok",
+    "lookup_failed",
+    "ok",
+    "lookup_failed",
+    "ok",
+    "lookup_failed",
+    "ok"
+   ]
+  },
+  {
+   "id": "3f049bd8eeb536465a9cf8434c7c16a9817cc225adf4dd920710e743f574bdc8-perplexity",
+   "system": "perplexity",
+   "n_urls": 3,
+   "n_pairs": 2,
+   "total_s": 48.29036813302082,
+   "fetch_s": 2.5113360550021753,
+   "archive_s": 42.88105514101335,
+   "judge_and_rest_s": 2.8979769370052963,
+   "classes": [
+    "content_changed",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "ok",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "af4b234f0763397c383643ffaf94b49784b332d74f23082f5c95e67bcbf8e867-bing_chat",
+   "system": "bing_chat",
+   "n_urls": 3,
+   "n_pairs": 3,
+   "total_s": 55.18607982998947,
+   "fetch_s": 3.4865230869909283,
+   "archive_s": 51.500987109029666,
+   "judge_and_rest_s": 0.19856963396887295,
+   "classes": [
+    "unverifiable",
+    "never_supported",
+    "never_supported"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "ok",
+    "ok"
+   ]
+  },
+  {
+   "id": "c73b56f756a10e3913f2fb35bdbda4efba3c31786147f801e48962d1f5887b97-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 5,
+   "total_s": 54.13981092101312,
+   "fetch_s": 7.143016363028437,
+   "archive_s": 45.4585014229815,
+   "judge_and_rest_s": 1.5382931350031868,
+   "classes": [
+    "never_supported",
+    "never_supported",
+    "never_supported",
+    "never_supported",
+    "never_supported"
+   ],
+   "archive_status": [
+    "ok",
+    "ok",
+    "ok",
+    "ok",
+    "ok"
+   ]
+  },
+  {
+   "id": "eca86f70e5d1f3841dc3d87687dbc18f4906b8ba1f53c11c28deeca3bb4e9a16-you",
+   "system": "you",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 35.757392927014735,
+   "fetch_s": 2.167654354008846,
+   "archive_s": 33.289746938011376,
+   "judge_and_rest_s": 0.2999916349945124,
+   "classes": [
+    "not_supported_now",
+    "never_supported"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "ok"
+   ]
+  },
+  {
+   "id": "0e334adf65a6f16ae7270806dd2ff4a13f2b4840f7ab439b75a14b815afa451d-neeva",
+   "system": "neeva",
+   "n_urls": 3,
+   "n_pairs": 0,
+   "total_s": 29.013795255013974,
+   "fetch_s": 5.725613779999549,
+   "archive_s": 23.18995872497908,
+   "judge_and_rest_s": 0.09822275003534742,
+   "classes": [],
+   "archive_status": []
+  },
+  {
+   "id": "da72e324dcc6b63c90d4fca4c9805f5f1cd033d613d10b182560b29addc83d70-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 8,
+   "total_s": 61.974045661016135,
+   "fetch_s": 6.91801628304529,
+   "archive_s": 51.56920836001518,
+   "judge_and_rest_s": 3.4868210179556627,
+   "classes": [
+    "unverifiable",
+    "not_supported_now",
+    "still_supported",
+    "unverifiable",
+    "still_supported",
+    "never_supported",
+    "not_supported_now",
+    "never_supported"
+   ],
+   "archive_status": [
+    "fetch_failed_403",
+    "lookup_failed",
+    "ok",
+    "fetch_failed_403",
+    "lookup_failed",
+    "ok",
+    "lookup_failed",
+    "ok"
+   ]
+  },
+  {
+   "id": "ea86bebc48735582cf768016939f49f9bbc2db9dd8aac1a17674e1be60ea46b2-you",
+   "system": "you",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 42.23023371701129,
+   "fetch_s": 1.0641598610091023,
+   "archive_s": 40.67920289700851,
+   "judge_and_rest_s": 0.48687095899367705,
+   "classes": [
+    "still_supported",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "88aa859ea9e8b470ccfe93fb9387b288746049a501ae40fffc1037835a600de7-perplexity",
+   "system": "perplexity",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 34.653332838992355,
+   "fetch_s": 1.4705176599672996,
+   "archive_s": 32.749482342012925,
+   "judge_and_rest_s": 0.43333283701213077,
+   "classes": [
+    "still_supported",
+    "never_supported"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "ok"
+   ]
+  },
+  {
+   "id": "9c65366e9a0d2572e11c1e4a8ee026470aabd6f637cc943f76e90c61f7c5a43f-neeva",
+   "system": "neeva",
+   "n_urls": 4,
+   "n_pairs": 4,
+   "total_s": 55.60766180898645,
+   "fetch_s": 4.193185203010216,
+   "archive_s": 51.1039203540131,
+   "judge_and_rest_s": 0.31055625196313486,
+   "classes": [
+    "never_supported",
+    "never_supported",
+    "unverifiable",
+    "never_supported"
+   ],
+   "archive_status": [
+    "ok",
+    "ok",
+    "ok",
+    "ok"
+   ]
+  },
+  {
+   "id": "8195dcb6ee6e3df70922185ae93ba7bc1e7417b722c5c7271fc310209f5d490e-neeva",
+   "system": "neeva",
+   "n_urls": 3,
+   "n_pairs": 4,
+   "total_s": 61.33932554200874,
+   "fetch_s": 5.417486326012295,
+   "archive_s": 54.22206212897436,
+   "judge_and_rest_s": 1.6997770870220847,
+   "classes": [
+    "never_supported",
+    "still_supported",
+    "still_supported",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "ok",
+    "lookup_failed",
+    "lookup_failed",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "aa5f201d4d963782473a0d7cb49511ac61ac427e8663afaf872ba26873ba8931-bing_chat",
+   "system": "bing_chat",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 50.79693940799916,
+   "fetch_s": 3.282637344003888,
+   "archive_s": 38.76291781698819,
+   "judge_and_rest_s": 8.751384247007081,
+   "classes": [
+    "never_supported",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "ok",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "c09f82c16b3b8a24db552af8e4386f563533d09a995a6e647a5a92063249cc54-neeva",
+   "system": "neeva",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 23.062777493993053,
+   "fetch_s": 0.7861601419863291,
+   "archive_s": 21.787508735986194,
+   "judge_and_rest_s": 0.48910861602053046,
+   "classes": [
+    "never_supported",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "ok",
+    "lookup_failed_503"
+   ]
+  },
+  {
+   "id": "3029e1089ec764f5ee8ccc8751a66d9c18c29184ffe2b00f82833cdc5799d503-neeva",
+   "system": "neeva",
+   "n_urls": 2,
+   "n_pairs": 1,
+   "total_s": 31.651046026003314,
+   "fetch_s": 0.3571226339554414,
+   "archive_s": 30.096974835993024,
+   "judge_and_rest_s": 1.1969485560548492,
+   "classes": [
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "f03bcee3183223ae99102383efc76eab2e3626a2bcc50be3d1df1b0187bb5a56-neeva",
+   "system": "neeva",
+   "n_urls": 2,
+   "n_pairs": 3,
+   "total_s": 45.13624403401627,
+   "fetch_s": 3.1508721400459763,
+   "archive_s": 40.72485155198956,
+   "judge_and_rest_s": 1.2605203419807367,
+   "classes": [
+    "still_supported",
+    "still_supported",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "lookup_failed",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "5381c1a120085c5f7b4d3b0088f9163e35c82d9687333e7c03e0d049cbe4ad30-perplexity",
+   "system": "perplexity",
+   "n_urls": 2,
+   "n_pairs": 0,
+   "total_s": 31.302326319011627,
+   "fetch_s": 0.7355347030097619,
+   "archive_s": 30.266998496983433,
+   "judge_and_rest_s": 0.29979311901843175,
+   "classes": [],
+   "archive_status": []
+  },
+  {
+   "id": "27d2851ba76a7fe9bc4220bee6144fba0dd7c6023b5c50567909757a502748fa-neeva",
+   "system": "neeva",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 36.9258764910046,
+   "fetch_s": 1.6150860589696094,
+   "archive_s": 35.288713910995284,
+   "judge_and_rest_s": 0.022076521039707586,
+   "classes": [
+    "link_lost",
+    "link_lost"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "lookup_failed"
+   ]
+  }
+ ]
+}

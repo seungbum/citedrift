@@ -1,0 +1,402 @@
+{
+ "n_answers": 20,
+ "explain": false,
+ "peak_gpu_gb": 3.357264384,
+ "gpu": "NVIDIA GeForce RTX 5070",
+ "runs": [
+  {
+   "id": "b278d4c0d9b16ce2ca711c776c9d4c0eaa702debf2eec64431652721005ad0f7-bing_chat",
+   "system": "bing_chat",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 44.98588508600369,
+   "fetch_s": 4.27377602699562,
+   "archive_s": 40.656392750970554,
+   "judge_and_rest_s": 0.05571630803751759,
+   "classes": [
+    "link_lost",
+    "link_lost"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "55f4acebe4645c564a4616c205600388cda868d7357aca757e5b090dd1313c2a-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 5,
+   "total_s": 70.10555989600834,
+   "fetch_s": 2.704217218008125,
+   "archive_s": 61.85381336399587,
+   "judge_and_rest_s": 5.5475293140043505,
+   "classes": [
+    "still_supported",
+    "still_supported",
+    "still_supported",
+    "link_lost",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "ok",
+    "ok",
+    "ok",
+    "no_capture",
+    "ok"
+   ]
+  },
+  {
+   "id": "863f422a8da393a0c698e6770934668cf4596beea7edec423c9cb1dfd56f0726-you",
+   "system": "you",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 36.25697913399199,
+   "fetch_s": 0.8027331180346664,
+   "archive_s": 35.3417229319748,
+   "judge_and_rest_s": 0.11252308398252353,
+   "classes": [
+    "still_supported",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "ok",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "76daa0d64bcd976cc827a17b31bea86ecaa670217c9e0c5a62eabbebe9ed0cce-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 8,
+   "total_s": 145.41397357199457,
+   "fetch_s": 43.383320259075845,
+   "archive_s": 86.94788522098679,
+   "judge_and_rest_s": 15.08276809193194,
+   "classes": [
+    "not_supported_now",
+    "still_supported",
+    "still_supported",
+    "unverifiable",
+    "not_supported_now",
+    "never_supported",
+    "still_supported",
+    "link_lost"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "ok",
+    "lookup_failed_503",
+    "lookup_failed",
+    "lookup_failed",
+    "ok",
+    "lookup_failed_503",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "3f049bd8eeb536465a9cf8434c7c16a9817cc225adf4dd920710e743f574bdc8-perplexity",
+   "system": "perplexity",
+   "n_urls": 3,
+   "n_pairs": 2,
+   "total_s": 49.84391910297563,
+   "fetch_s": 2.467280321987346,
+   "archive_s": 45.501141034998,
+   "judge_and_rest_s": 1.8754977459902875,
+   "classes": [
+    "still_supported",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "ok",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "af4b234f0763397c383643ffaf94b49784b332d74f23082f5c95e67bcbf8e867-bing_chat",
+   "system": "bing_chat",
+   "n_urls": 3,
+   "n_pairs": 3,
+   "total_s": 57.828404583997326,
+   "fetch_s": 3.1889513949863613,
+   "archive_s": 54.53360700097983,
+   "judge_and_rest_s": 0.10584618803113699,
+   "classes": [
+    "unverifiable",
+    "unverifiable",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "ok",
+    "no_capture",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "c73b56f756a10e3913f2fb35bdbda4efba3c31786147f801e48962d1f5887b97-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 5,
+   "total_s": 63.679339636000805,
+   "fetch_s": 5.331291435053572,
+   "archive_s": 57.316844568937086,
+   "judge_and_rest_s": 1.031203632010147,
+   "classes": [
+    "never_supported",
+    "link_lost",
+    "never_supported",
+    "never_supported",
+    "still_supported"
+   ],
+   "archive_status": [
+    "ok",
+    "lookup_failed_503",
+    "ok",
+    "ok",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "eca86f70e5d1f3841dc3d87687dbc18f4906b8ba1f53c11c28deeca3bb4e9a16-you",
+   "system": "you",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 21.209735420998186,
+   "fetch_s": 1.4980417570041027,
+   "archive_s": 19.37197649301379,
+   "judge_and_rest_s": 0.3397171709802933,
+   "classes": [
+    "never_supported",
+    "never_supported"
+   ],
+   "archive_status": [
+    "ok",
+    "ok"
+   ]
+  },
+  {
+   "id": "0e334adf65a6f16ae7270806dd2ff4a13f2b4840f7ab439b75a14b815afa451d-neeva",
+   "system": "neeva",
+   "n_urls": 3,
+   "n_pairs": 0,
+   "total_s": 36.26063133799471,
+   "fetch_s": 5.15887269898667,
+   "archive_s": 31.014916787971742,
+   "judge_and_rest_s": 0.08684185103629716,
+   "classes": [],
+   "archive_status": []
+  },
+  {
+   "id": "da72e324dcc6b63c90d4fca4c9805f5f1cd033d613d10b182560b29addc83d70-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 8,
+   "total_s": 78.6585810460092,
+   "fetch_s": 5.561016280960757,
+   "archive_s": 70.47627926600398,
+   "judge_and_rest_s": 2.621285499044461,
+   "classes": [
+    "unverifiable",
+    "never_supported",
+    "link_lost",
+    "unverifiable",
+    "still_supported",
+    "link_lost",
+    "not_supported_now",
+    "still_supported"
+   ],
+   "archive_status": [
+    "fetch_failed_403",
+    "ok",
+    "lookup_failed",
+    "fetch_failed_403",
+    "ok",
+    "lookup_failed",
+    "lookup_failed",
+    "lookup_failed_503"
+   ]
+  },
+  {
+   "id": "ea86bebc48735582cf768016939f49f9bbc2db9dd8aac1a17674e1be60ea46b2-you",
+   "system": "you",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 39.02489064098336,
+   "fetch_s": 0.8714152100146748,
+   "archive_s": 37.35482993602636,
+   "judge_and_rest_s": 0.7986454949423205,
+   "classes": [
+    "still_supported",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "ok",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "88aa859ea9e8b470ccfe93fb9387b288746049a501ae40fffc1037835a600de7-perplexity",
+   "system": "perplexity",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 46.17032380599994,
+   "fetch_s": 2.1231704789970536,
+   "archive_s": 43.63034152099863,
+   "judge_and_rest_s": 0.4168118060042616,
+   "classes": [
+    "still_supported",
+    "never_supported"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "ok"
+   ]
+  },
+  {
+   "id": "9c65366e9a0d2572e11c1e4a8ee026470aabd6f637cc943f76e90c61f7c5a43f-neeva",
+   "system": "neeva",
+   "n_urls": 4,
+   "n_pairs": 4,
+   "total_s": 73.12103839498013,
+   "fetch_s": 2.713224603998242,
+   "archive_s": 70.35068863400375,
+   "judge_and_rest_s": 0.05712515697814524,
+   "classes": [
+    "unverifiable",
+    "link_lost",
+    "unverifiable",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "lookup_failed",
+    "lookup_failed",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "8195dcb6ee6e3df70922185ae93ba7bc1e7417b722c5c7271fc310209f5d490e-neeva",
+   "system": "neeva",
+   "n_urls": 3,
+   "n_pairs": 4,
+   "total_s": 37.6362899300002,
+   "fetch_s": 4.66427937100525,
+   "archive_s": 31.52395423699636,
+   "judge_and_rest_s": 1.4480563219985925,
+   "classes": [
+    "not_supported_now",
+    "still_supported",
+    "still_supported",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "lookup_failed_503",
+    "lookup_failed_503",
+    "lookup_failed_503"
+   ]
+  },
+  {
+   "id": "aa5f201d4d963782473a0d7cb49511ac61ac427e8663afaf872ba26873ba8931-bing_chat",
+   "system": "bing_chat",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 33.95617270399816,
+   "fetch_s": 3.2912248949869536,
+   "archive_s": 25.87474299099995,
+   "judge_and_rest_s": 4.7902048180112615,
+   "classes": [
+    "still_supported",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "lookup_failed_503"
+   ]
+  },
+  {
+   "id": "c09f82c16b3b8a24db552af8e4386f563533d09a995a6e647a5a92063249cc54-neeva",
+   "system": "neeva",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 12.62903370600543,
+   "fetch_s": 1.2608953469898552,
+   "archive_s": 10.978180353005882,
+   "judge_and_rest_s": 0.3899580060096923,
+   "classes": [
+    "not_supported_now",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "lookup_failed_503",
+    "lookup_failed_503"
+   ]
+  },
+  {
+   "id": "3029e1089ec764f5ee8ccc8751a66d9c18c29184ffe2b00f82833cdc5799d503-neeva",
+   "system": "neeva",
+   "n_urls": 2,
+   "n_pairs": 1,
+   "total_s": 26.96685899500153,
+   "fetch_s": 0.2792596649960615,
+   "archive_s": 25.82223119502305,
+   "judge_and_rest_s": 0.8653681349824183,
+   "classes": [
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "lookup_failed_503"
+   ]
+  },
+  {
+   "id": "f03bcee3183223ae99102383efc76eab2e3626a2bcc50be3d1df1b0187bb5a56-neeva",
+   "system": "neeva",
+   "n_urls": 2,
+   "n_pairs": 3,
+   "total_s": 28.000448039994808,
+   "fetch_s": 0.8797093849861994,
+   "archive_s": 25.826314475998515,
+   "judge_and_rest_s": 1.2944241790100932,
+   "classes": [
+    "still_supported",
+    "still_supported",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "lookup_failed_503",
+    "lookup_failed_503",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "5381c1a120085c5f7b4d3b0088f9163e35c82d9687333e7c03e0d049cbe4ad30-perplexity",
+   "system": "perplexity",
+   "n_urls": 2,
+   "n_pairs": 0,
+   "total_s": 26.689856452983804,
+   "fetch_s": 0.7091711460088845,
+   "archive_s": 25.80758260501898,
+   "judge_and_rest_s": 0.17310270195594057,
+   "classes": [],
+   "archive_status": []
+  },
+  {
+   "id": "27d2851ba76a7fe9bc4220bee6144fba0dd7c6023b5c50567909757a502748fa-neeva",
+   "system": "neeva",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 26.997475834999932,
+   "fetch_s": 1.5665864859765861,
+   "archive_s": 25.402387551032007,
+   "judge_and_rest_s": 0.028501797991339117,
+   "classes": [
+    "link_lost",
+    "link_lost"
+   ],
+   "archive_status": [
+    "lookup_failed_503",
+    "lookup_failed_503"
+   ]
+  }
+ ]
+}

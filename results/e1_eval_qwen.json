@@ -1,0 +1,39 @@
+{
+ "band": [
+  0.6,
+  0.85
+ ],
+ "dev": {
+  "qwen_bal_acc": 0.6474244805308189,
+  "qwen_bal_acc_ci": [
+   0.6164792846641605,
+   0.6780066220632329
+  ],
+  "qwen_f1_unsupported": 0.46296296296296297,
+  "qwen_supported_rate": 0.8589511754068716,
+  "cascade_bal_acc": 0.7863846691112275,
+  "cascade_bal_acc_ci": [
+   0.7559406844880685,
+   0.8139074891137752
+  ],
+  "cascade_share_qwen": 0.25587703435804704
+ },
+ "test": {
+  "qwen_bal_acc": 0.6386135508155584,
+  "qwen_bal_acc_ci": [
+   0.6091818080948216,
+   0.6684036311078225
+  ],
+  "qwen_f1_unsupported": 0.4535637149028078,
+  "qwen_supported_rate": 0.8514129443938013,
+  "cascade_bal_acc": 0.7668339606859055,
+  "cascade_bal_acc_ci": [
+   0.7361797622668611,
+   0.7937687364137731
+  ],
+  "cascade_share_qwen": 0.25250683682771197
+ },
+ "median_seconds": 0.8373800020199269,
+ "p90_seconds": 1.0818437656096649,
+ "median_input_tokens": 1391.0
+}

@@ -1,0 +1,132 @@
+{
+ "n_key": 128,
+ "n_labels": 128,
+ "inspector": "independent AI agent (blind to outcomes)",
+ "still_supported": {
+  "n": 29,
+  "current_support": {
+   "full": 24,
+   "partial": 4,
+   "no": 1
+  },
+  "evidence_now": {
+   "verbatim": 26,
+   "changed": 3
+  },
+  "same_document": {
+   "same": 29
+  }
+ },
+ "uncertain": {
+  "n": 20,
+  "current_support": {
+   "partial": 4,
+   "full": 12,
+   "no": 4
+  },
+  "evidence_now": {
+   "cannot_tell": 11,
+   "verbatim": 4,
+   "paraphrase": 2,
+   "changed": 3
+  },
+  "same_document": {
+   "same": 20
+  }
+ },
+ "demoted": {
+  "n": 19,
+  "current_support": {
+   "full": 12,
+   "partial": 3,
+   "no": 4
+  },
+  "evidence_now": {
+   "paraphrase": 2,
+   "verbatim": 11,
+   "changed": 6
+  },
+  "same_document": {
+   "same": 19
+  }
+ },
+ "content_changed": {
+  "n": 38,
+  "current_support": {
+   "no": 11,
+   "full": 15,
+   "partial": 11,
+   "cannot_tell": 1
+  },
+  "evidence_now": {
+   "absent": 8,
+   "paraphrase": 10,
+   "changed": 14,
+   "verbatim": 4,
+   "cannot_tell": 2
+  },
+  "same_document": {
+   "same": 33,
+   "different": 4,
+   "cannot_tell": 1
+  }
+ },
+ "away": {
+  "n": 18,
+  "current_support": {
+   "no": 15,
+   "full": 2,
+   "cannot_tell": 1
+  },
+  "evidence_now": {
+   "absent": 15,
+   "verbatim": 1,
+   "paraphrase": 1,
+   "cannot_tell": 1
+  },
+  "same_document": {
+   "different": 15,
+   "same": 2,
+   "cannot_tell": 1
+  }
+ },
+ "agreement": {
+  "content_changed_not_full": [
+   22,
+   37
+  ],
+  "content_changed_evidence_changed_or_absent": [
+   22,
+   36
+  ],
+  "still_supported_full": [
+   24,
+   29
+  ],
+  "away_different": [
+   15,
+   17
+  ],
+  "demoted_full": [
+   12,
+   19
+  ],
+  "uncertain_not_full": [
+   8,
+   20
+  ]
+ },
+ "macros": {
+  "insChangedN": "38",
+  "insChangedPrec": "22 of 37 (59\\%)",
+  "insStillN": "29",
+  "insStillAgree": "24 of 29 (83\\%)",
+  "insAwayN": "18",
+  "insAwayDifferent": "15 of 17 (88\\%)",
+  "insChangedEv": "22 of 36 (61\\%)",
+  "insDemotedN": "19",
+  "insDemotedFull": "12 of 19 (63\\%)",
+  "insUncertainN": "20",
+  "insUncertainNotFull": "8 of 20 (40\\%)"
+ }
+}

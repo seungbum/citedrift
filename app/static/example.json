@@ -1,0 +1,9 @@
+{
+ "answer": "The current top-ranked female tennis player in the world is **Iga Swiatek** from Poland [1] [2]. She has accumulated **10,585 points** and holds the No. 1 position in the Women's Tennis Association rankings [1]. Is there anything else you would like to know?",
+ "urls": [
+  "https://www.sportingnews.com/us/tennis/news/world-no-1-women-wta-rankings-explainer/eeyvxxqzooi237rdnoqox6o5",
+  "https://www.fresherslive.com/latest/articles/best-female-tennis-players-in-the-world-updated-top-10-list-10021693"
+ ],
+ "cited_at": "2023-03-15",
+ "source": "Bing Chat answer from Liu et al. (2023), test/dev split; citation markers renumbered to the order of distinct URLs."
+}

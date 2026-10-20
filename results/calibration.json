@@ -1,0 +1,109 @@
+{
+ "n_urls": 1473,
+ "v1_states": {
+  "alive": 881,
+  "redirect_other_site": 48,
+  "blocked_or_paywalled": 214,
+  "robots_disallowed": 36,
+  "dead_http": 93,
+  "redirect_other_page": 119,
+  "unreachable": 29,
+  "redirect_home": 19,
+  "soft404_or_empty": 34
+ },
+ "v1_groups": {
+  "reachable": 881,
+  "redirect": 186,
+  "blocked": 214,
+  "skipped": 36,
+  "lost": 127,
+  "unreachable": 29
+ },
+ "v2_states": {
+  "ok": 966,
+  "moved": 139,
+  "filtered": 34,
+  "away": 67,
+  "blocked": 121,
+  "skipped": 36,
+  "dead": 74,
+  "transient": 32,
+  "soft404": 1,
+  "empty": 3
+ },
+ "v2_groups": {
+  "reachable": 1105,
+  "unverifiable": 226,
+  "lost": 142
+ },
+ "transitions": {
+  "blocked->away": 5,
+  "blocked->blocked": 97,
+  "blocked->dead": 5,
+  "blocked->filtered": 21,
+  "blocked->moved": 11,
+  "blocked->ok": 75,
+  "lost->away": 3,
+  "lost->blocked": 17,
+  "lost->dead": 69,
+  "lost->empty": 3,
+  "lost->filtered": 13,
+  "lost->moved": 2,
+  "lost->ok": 13,
+  "lost->transient": 7,
+  "reachable->blocked": 4,
+  "reachable->ok": 876,
+  "reachable->soft404": 1,
+  "redirect->away": 58,
+  "redirect->blocked": 2,
+  "redirect->moved": 126,
+  "skipped->skipped": 36,
+  "unreachable->away": 1,
+  "unreachable->blocked": 1,
+  "unreachable->ok": 2,
+  "unreachable->transient": 25
+ },
+ "network_filtered": 34,
+ "browser_rechecked": 1463,
+ "browser_outcomes": {
+  "http_200": 741,
+  "http_403": 69,
+  "error": 138,
+  "bot_wall": 306,
+  "http_500": 7,
+  "http_404": 118,
+  "http_522": 6,
+  "http_429": 4,
+  "http_503": 31,
+  "http_410": 18,
+  "http_202": 12,
+  "http_401": 5,
+  "http_526": 2,
+  "http_521": 2,
+  "http_502": 2,
+  "http_525": 1,
+  "http_423": 1
+ },
+ "v1_blocked_now": {
+  "filtered": 21,
+  "ok": 75,
+  "blocked": 97,
+  "moved": 11,
+  "away": 5,
+  "dead": 5
+ },
+ "v1_blocked_tried_in_browser": 193,
+ "v1_redirect_now": {
+  "moved": 126,
+  "away": 58,
+  "blocked": 2
+ },
+ "wayback_requery": {
+  "n": 54,
+  "has_capture": 41,
+  "availability_429": 5,
+  "no_capture_found": 13,
+  "answered_by_network_filter": 8,
+  "reachable_now": 8
+ }
+}

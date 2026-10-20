@@ -1,0 +1,68 @@
+# In-house notes (never published)
+STATUS.md
+PLAN.md
+HANDOFF.md
+AI_USAGE_LOG.md
+
+# Local, network-specific settings (filter markers, internal strings)
+local/
+
+# Page bodies, cached page text and third-party data
+data/raw/
+data/live/
+data/live_browser/
+data/cache/
+**/items/
+*.html.gz
+author_check.html
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+credentials*.json
+secrets*.json
+.netrc
+.hf_token
+
+# Model weights and caches
+*.safetensors
+*.gguf
+*.pt
+*.pth
+*.ckpt
+*.onnx
+models/
+.cache/
+hf_cache/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Build outputs
+site/
+paper/build.log
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.synctex.gz
+*.log
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

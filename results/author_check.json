@@ -1,0 +1,42 @@
+{
+ "items_checked": 20,
+ "votes": 60,
+ "agree": 58,
+ "agree_rate": 0.9666666666666667,
+ "per_question": {
+  "current_support": [
+   19,
+   20
+  ],
+  "evidence_now": [
+   19,
+   20
+  ],
+  "same_document": [
+   20,
+   20
+  ]
+ },
+ "comments": {
+  "11": "Subsections document all 8 Premier League era titles (2012-2024), so page fully supports statement despite top-flight summary table showing 10.",
+  "19": "CDC/NCHS stats updated on the page to 199.8 lbs and 40.5 in waist.",
+  "25": "No 2023 snippet recorded, but current page headings list all 8 tips.",
+  "26": "Sentence under Work out the Mat remains verbatim.",
+  "36": "Earth Institute Q&A text remains verbatim.",
+  "38": "Article reformatted into bulleted steps; infection and tetanus advice preserved.",
+  "56": "Opening sentence unchanged.",
+  "65": "Wikipedia lead rewritten to emphasize Jan 2016 launch; Modi Aug 2015 announcement removed.",
+  "67": "Domain redirect to unrelated empty site (apostoloteca.org).",
+  "73": "FEE commentary text remains verbatim.",
+  "78": "Team record updated with subsequent seasons.",
+  "80": "Galatians 5:22-23 attributes list preserved in bulleted format.",
+  "85": "No 2023 evidence given, but current table confirms all title counts.",
+  "92": "Lead text on the two academic disciplines remains verbatim.",
+  "99": "FY2024 edition retains exact definition sentence.",
+  "104": "Investopedia explainer rewritten; core concepts of poverty alleviation and welfare bureaucracy preserved.",
+  "108": "The sentence added England (Pakistan, Sri Lanka, and England), so it is changed rather than strictly verbatim.",
+  "121": "Cast list retains all three actors verbatim.",
+  "123": "Pew Short Read updated with 2024 survey data; 2019 comparison dropped.",
+  "125": "Redirects to blank lander URL."
+ }
+}

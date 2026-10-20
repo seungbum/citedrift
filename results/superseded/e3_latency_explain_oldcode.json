@@ -1,0 +1,116 @@
+{
+ "n_answers": 5,
+ "explain": true,
+ "peak_gpu_gb": 9.089253376,
+ "gpu": "NVIDIA GeForce RTX 5070",
+ "runs": [
+  {
+   "id": "b278d4c0d9b16ce2ca711c776c9d4c0eaa702debf2eec64431652721005ad0f7-bing_chat",
+   "system": "bing_chat",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 35.62557417701464,
+   "fetch_s": 4.17339737500879,
+   "archive_s": 30.682738072995562,
+   "judge_and_rest_s": 0.7694387290102895,
+   "classes": [
+    "link_lost",
+    "link_lost"
+   ],
+   "archive_status": [
+    "ok",
+    "ok"
+   ]
+  },
+  {
+   "id": "55f4acebe4645c564a4616c205600388cda868d7357aca757e5b090dd1313c2a-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 5,
+   "total_s": 89.17843981800252,
+   "fetch_s": 2.821742439031368,
+   "archive_s": 81.27682150399778,
+   "judge_and_rest_s": 5.079875874973368,
+   "classes": [
+    "still_supported",
+    "still_supported",
+    "still_supported",
+    "link_lost",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "ok",
+    "ok",
+    "lookup_failed",
+    "lookup_failed",
+    "ok"
+   ]
+  },
+  {
+   "id": "863f422a8da393a0c698e6770934668cf4596beea7edec423c9cb1dfd56f0726-you",
+   "system": "you",
+   "n_urls": 2,
+   "n_pairs": 2,
+   "total_s": 28.56694403500296,
+   "fetch_s": 0.3715999980340712,
+   "archive_s": 27.913562030968023,
+   "judge_and_rest_s": 0.2817820060008671,
+   "classes": [
+    "still_supported",
+    "unverifiable"
+   ],
+   "archive_status": [
+    "ok",
+    "ok"
+   ]
+  },
+  {
+   "id": "76daa0d64bcd976cc827a17b31bea86ecaa670217c9e0c5a62eabbebe9ed0cce-perplexity",
+   "system": "perplexity",
+   "n_urls": 5,
+   "n_pairs": 8,
+   "total_s": 119.43764491399634,
+   "fetch_s": 43.28104963398073,
+   "archive_s": 58.01280003701686,
+   "judge_and_rest_s": 18.14379524299875,
+   "classes": [
+    "not_supported_now",
+    "still_supported",
+    "still_supported",
+    "never_supported",
+    "not_supported_now",
+    "never_supported",
+    "still_supported",
+    "link_lost"
+   ],
+   "archive_status": [
+    "lookup_failed",
+    "ok",
+    "ok",
+    "ok",
+    "lookup_failed",
+    "ok",
+    "ok",
+    "lookup_failed"
+   ]
+  },
+  {
+   "id": "3f049bd8eeb536465a9cf8434c7c16a9817cc225adf4dd920710e743f574bdc8-perplexity",
+   "system": "perplexity",
+   "n_urls": 3,
+   "n_pairs": 2,
+   "total_s": 48.79771754000103,
+   "fetch_s": 1.8647387879900634,
+   "archive_s": 43.76403572698473,
+   "judge_and_rest_s": 3.1689430250262376,
+   "classes": [
+    "content_changed",
+    "not_supported_now"
+   ],
+   "archive_status": [
+    "ok",
+    "lookup_failed"
+   ]
+  }
+ ]
+}

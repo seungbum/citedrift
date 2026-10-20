@@ -1,0 +1,7 @@
+{
+ "intercept": -0.014671555162384015,
+ "w_minicheck_logit": 0.3891582029857971,
+ "w_ngram": 2.9433086735437053,
+ "fitted_on": "dev",
+ "target": "complete_support"
+}

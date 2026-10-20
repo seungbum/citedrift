@@ -1,0 +1,53 @@
+\section{Evaluation}
+\label{sec:eval}
+\textbf{Data.} Liu et al.~\cite{Liu_2023} collected answers of Bing Chat, NeevaAI, Perplexity and YouChat between late February and late March 2023 and had annotators judge each statement--citation pair (complete, partial or no support), copying evidence sentences from the page. The release also contains the text of each cited page, released with the dataset (extracted with DOM Distiller and Trafilatura); we use it as the ``then'' page. We develop and report on the development (\nDev pairs) and test (\nTest) splits, \nPairs pairs and \nUrls distinct URLs re-fetched on 15 October 2026, and keep the training split (\trPairs pairs) as an untouched held-out check, re-fetched about \trFetchGapH hours later. After calibration, \urlReachable URLs (\urlReachablePct) were reachable, \urlLost (\urlLostPct) lost and \urlUnver (\urlUnverPct) could not be checked from our network.
+
+\textbf{E1: judge accuracy.} Table~\ref{tab:e1} compares judges on the 2023 text against the annotators' labels (target: complete support; threshold chosen on dev, reported on test). MiniCheck alone and word 4-gram overlap are close on average because these engines often copy phrases from their sources, but on the \subShare of test statements that share few 4-grams with the page, MiniCheck (AUC \subMcAuc) is far better than string matching (\subNgAuc). Their combination is best overall. Qwen2.5-7B (4-bit) on the three best chunks accepts \eOneQwSupRate of all pairs and is weaker as a verifier; we use it only to explain flags.
+
+\begin{table}[t]
+\caption{E1: support judges on the 2023 page text vs.\ the annotators' labels (test split, $n=$\nTest; 95\% bootstrap CIs).}
+\label{tab:e1}
+\small
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lccc@{}}
+\toprule
+Judge & AUC & Bal.\ acc. & F1$_\text{unsup.}$\\
+\midrule
+Word 4-gram overlap & \eOneNgAuc & \eOneNgBa & \eOneNgFone\\
+MiniCheck-Flan-T5-L & \eOneMcAuc & \eOneMcBa & \eOneMcFone\\
+Qwen2.5-7B (4-bit), top-3 chunks & -- & \eOneQwBa & \eOneQwFone\\
+\textbf{MiniCheck + overlap (ours)} & \textbf{\eOneCoAuc} & \textbf{\eOneCoBa} & \textbf{\eOneCoFone}\\
+\quad 95\% CI & \eOneCoAucCI & \eOneCoBaCI & \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\textbf{E2: drift 2023$\rightarrow$2026.} We take the \nThenSupported pairs that annotators judged \emph{fully} supporting; \nUnverPairs of them could not be checked, leaving \nCheckable. With the annotators' evidence available, a reachable pair that the judge rejects today counts as \emph{content changed} only if the judge accepted the 2023 text \emph{and} not all of the annotator's evidence is still on today's page; if all of it is still there it stays still supported (\judgeMissEv pairs), otherwise it is \emph{uncertain}. \linkLostN citations (\linkLostRate; 95\% CI \linkLostClusterCI, bootstrap over URLs) lost the link, \changedN (\changedRate, CI \changedClusterCI) are flagged as content changes, and \uncertainN (\uncertainRate) are uncertain (Table~\ref{tab:e2}). On the test split alone, which played no part in fitting the judge (the outcome rule was chosen on a spot-check sample that included test pairs), the rates are \testLinkLostRate and \testChangedRate. On the held-out training split, processed the same way after all design choices were fixed, the judge reaches AUC \trAuc on the 2023 text, \trLinkLostRate of \trCheckable checkable citations lost the link and \trChangedRate are flagged as content changes; a fresh blind AI agent confirmed \trChangedPrec of the decidable flags in a sample of \trChangedSampled.
+
+\begin{table}[t]
+\caption{E2: outcome in Oct 2026 of citations judged fully supporting in 2023 (share of checkable pairs), and how well each method finds lost support (estimated over all \bsN checkable pairs: spot-check sample weighted by stratum, the \bsDead pairs on dead or error pages counted as lost).}
+\label{tab:e2}
+\small
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrrr@{}}
+\toprule
+Engine & checkable & link lost & content changed\\
+\midrule
+Bing Chat & \checkableBing & \linkBing & \changedBing\\
+NeevaAI & \checkableNeeva & \linkNeeva & \changedNeeva\\
+Perplexity & \checkablePpl & \linkPpl & \changedPpl\\
+YouChat & \checkableYou & \linkYou & \changedYou\\
+\midrule
+Method & precision & recall & F1\\
+urlhealth (not LIVE) & \bsUhP & \bsUhR & \bsUhF\\
+String match (4-gram) & \bsSmP & \bsSmR & \bsSmF\\
+\textbf{CiteDrift} & \textbf{\bsCdP} & \bsCdR & \bsCdF\\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\textbf{Validation.} We have no human labels for 2026, so AI agents (Claude, a fresh context for each sample), blind to all methods and shown each statement, the annotator's evidence, both URLs and the page text, labelled stratified random samples. On the first (\insOneN items), only \insOneChangedPrec content changes flagged by a looser rule (either signal alone) were confirmed, so we adopted the two-signal rule; we report the second, fresh sample (\insTwoN items). There the agent confirmed \insChangedPrec flagged content changes as no longer fully supported, \insAwayDifferent ``redirected elsewhere'' links as leading to a different document, and \insStillAgree ``still supported'' pairs. Because the agents and the 2023 annotators can simply disagree, another agent labelled the same pairs on the \emph{2023} text: it already judged \ctlStillThen of the still-supported pairs and \ctlChangedThen of the flagged changes not fully supported in 2023 (vs.\ \ctlStillNow and \ctlChangedNow today; \ctlStillN and \ctlChangedN pairs labelled both times). The flagged changes are thus mostly real changes rather than labeller disagreement. Netting out the disagreement and weighting by stratum size, content changes remove full support from about \ctlExcess (CI \ctlExcessCI) of the reachable citations, possibly more than CiteDrift flags; it rests mostly on the few sampled still-supported pairs judged changed. The two-signal rule trades recall for precision. The author re-checked \authorItems of the second sample's items by hand and agreed with \authorAgree of the agent's labels.
+
+\textbf{Baselines.} urlhealth~\cite{rao2026detectingcorrectingreferencehallucinations} reports \uhLiveLinkLost of the \linkLostN lost links as live, nearly all of them redirects to a home page or another document, and calls \uhHalluStill still-supported citations ``likely hallucinated''. It labelled \wbN URLs ``likely hallucinated'' although annotators read all of them in 2023; \wbReachable of them load normally for CiteDrift, \wbFiltered were answered by our network filter, a later re-query found archive records for \wbCapture, and its code turns any failed archive lookup into ``no snapshot''. Over all checkable citations (Table~\ref{tab:e2}), urlhealth misses most lost support. String matching on today's page (same text views as CiteDrift) finds the most, but more than half of its flags are false (precision \bsSmP), likely because answers paraphrase; CiteDrift is the conservative option (precision \bsCdP, CI \bsCdPCI), at the cost of recall; the two F1 scores do not differ reliably, and the reference (the agent's 2026 label) includes labeller disagreement, which lowers every method's recall.
+
+\textbf{E3--E4: cost and check mode.} On one RTX~5070 (12\,GB), judging one statement against both views of today's page takes a median \judgeBothMs\,ms. Checking a whole answer (\eThreeN test answers; median \eThreeUrls URLs, archive capture as ``then'') takes a median \eThreeMedianS\,s, of which \eThreeNetShare is spent waiting on polite page and archive requests and \eThreeJudgeS\,s on judging; peak GPU memory is \eThreeGpuGB\,GB (\eThreeExplainGpuGB\,GB with the explainer, measured on five answers). For \eThreeArchFail statement--citation pairs no archived ``then'' page could be retrieved (\eThreeArchLookup lookup errors, mostly without a logged cause, and \eThreeArchFetch refused capture fetches); such pairs are marked as having no ``then'' page, and on reachable pages they are labelled still supported if today's page supports them and uncertain otherwise. Run on \eFourN test answers with the dataset's 2023 text, check mode, run without its optional browser re-check, agreed with the E2 tool-mode outcome on \eFourAgree of the \eFourPairs pairs it could match to E2 (of \eFourTotal; \eFourAgreeExNever without pairs both judged unsupported in 2023); most differences are pages that the batch run had opened in a browser.
+
+\textbf{Limitations.} The ``then'' text was extracted differently from today's; outcomes depend on one network vantage point and fetch time; \nUnverPairs supported citations could not be checked; and the 2026 validation rests on an AI labeller. Outcomes are therefore shown with scores and evidence for the reader to inspect.

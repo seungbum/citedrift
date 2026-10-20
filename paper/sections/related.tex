@@ -1,0 +1,5 @@
+\section{Related Work}
+\label{sec:related}
+\textbf{Reference rot.} Studies of scholarly articles separate link rot from content drift and find both common~\cite{Klein_2014,Jones_2016}; CiteDrift measures both for AI search citations, per statement rather than per URL.
+\textbf{Citation and attribution checking.} Liu et al.~\cite{Liu_2023} audited four generative search engines with annotators; SourceCheckup~\cite{Wu_2025} and DeepTRACE~\cite{venkit2025deeptraceauditingdeepresearch} automate such audits with LLM judges; ALCE~\cite{Gao_2023} and AttrScore~\cite{Yue_2023} evaluate attribution automatically; Facts\&Evidence~\cite{Boonsanong_2025} checks claims against multiple evidence sources. All judge support at one point in time.
+\textbf{Link checking and freshness.} urlhealth~\cite{rao2026detectingcorrectingreferencehallucinations} classifies cited URLs as live, stale or likely hallucinated using the Wayback Machine, without looking at content. OwlerLite~\cite{Zerhoudi_2026} detects page changes to keep a retrieval index fresh before answering; CiteDrift audits citations after an answer was given.

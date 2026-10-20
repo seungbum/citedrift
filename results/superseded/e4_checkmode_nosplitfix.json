@@ -1,0 +1,29 @@
+{
+ "n_answers": 60,
+ "n_matched_pairs": 166,
+ "n_unmatched": 59,
+ "outcome_agreement": 154,
+ "link_state_agreement": 147,
+ "confusion": {
+  "link_lost->link_lost": 13,
+  "still_supported->still_supported": 62,
+  "unverifiable->unverifiable": 17,
+  "content_changed->content_changed": 4,
+  "never_supported->never_supported": 58,
+  "never_supported->uncertain": 1,
+  "link_lost->unverifiable": 1,
+  "still_supported->unverifiable": 8,
+  "still_supported->link_lost": 1,
+  "unverifiable->link_lost": 1
+ },
+ "link_confusion": {
+  "moved->away": 2,
+  "filtered->blocked": 2,
+  "ok->blocked": 11,
+  "dead->empty": 1,
+  "blocked->transient": 1,
+  "transient->dead": 1,
+  "moved->blocked": 1
+ },
+ "median_seconds": 4.8459858894348145
+}

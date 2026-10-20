@@ -1,0 +1,25 @@
+# Palette validation (dataviz skill validator, run 2026-10-19 13:26 KST)
+## light #2a78d6,#eb6834,#4a3aa7
+
+Palette (light, surface #fcfcfb, categorical): 3 slots
+  [PASS] Lightness band         all 3 inside L 0.43–0.77
+  [PASS] Chroma floor           all 3 >= 0.1
+  [PASS] CVD separation         worst adjacent #eb6834↔#2a78d6 ΔE 24.7 (protan) · tritan 32.7
+  [PASS] Normal-vision floor    worst adjacent #eb6834↔#2a78d6 ΔE 33.6 (normal)
+  [PASS] Contrast vs surface    all 3 >= 3:1
+
+  → ALL CHECKS PASS  (CVD in the 6–8 floor band is legal ONLY with secondary encoding: direct labels, gaps, or texture)
+  scope: categorical palettes only. For a lone status/text color check WCAG text contrast; for a sequential ramp, lightness monotonicity.
+
+## dark #3987e5,#d95926,#9085e9
+
+Palette (dark, surface #1a1a19, categorical): 3 slots
+  [PASS] Lightness band         all 3 inside L 0.48–0.67
+  [PASS] Chroma floor           all 3 >= 0.1
+  [PASS] CVD separation         worst adjacent #9085e9↔#d95926 ΔE 26.0 (deutan) · tritan 25.8
+  [PASS] Normal-vision floor    worst adjacent #9085e9↔#d95926 ΔE 27.0 (normal)
+  [PASS] Contrast vs surface    all 3 >= 3:1
+
+  → ALL CHECKS PASS  (CVD in the 6–8 floor band is legal ONLY with secondary encoding: direct labels, gaps, or texture)
+  scope: categorical palettes only. For a lone status/text color check WCAG text contrast; for a sequential ramp, lightness monotonicity.
+

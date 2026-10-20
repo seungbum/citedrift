@@ -1,0 +1,63 @@
+{
+ "population": "complete_support pairs",
+ "n": 1627,
+ "ngram_threshold": 0.2,
+ "urlhealth_by_class": {
+  "still_supported": {
+   "LIVE": 1060,
+   "UNKNOWN": 78,
+   "LIKELY_HALLUCINATED": 7
+  },
+  "link_lost": {
+   "LIVE": 60,
+   "LIKELY_HALLUCINATED": 40,
+   "UNKNOWN": 11,
+   "DEAD": 33
+  },
+  "content_changed": {
+   "LIVE": 57,
+   "UNKNOWN": 3
+  },
+  "uncertain": {
+   "LIVE": 50,
+   "UNKNOWN": 3,
+   "DEAD": 1
+  },
+  "unverifiable": {
+   "UNKNOWN": 178,
+   "NOT_RUN": 26,
+   "LIVE": 12,
+   "LIKELY_HALLUCINATED": 7,
+   "DEAD": 1
+  }
+ },
+ "stringmatch_by_class": {
+  "still_supported": {
+   "match": 782,
+   "no_match": 363
+  },
+  "link_lost": {
+   "no_page": 144
+  },
+  "content_changed": {
+   "match": 10,
+   "no_match": 50
+  },
+  "uncertain": {
+   "no_match": 43,
+   "match": 11
+  },
+  "unverifiable": {
+   "no_page": 224
+  }
+ },
+ "lost_support_total": 204,
+ "urlhealth_live_among_lost": 117,
+ "urlhealth_live_among_link_lost": 60,
+ "n_link_lost": 144,
+ "urlhealth_live_among_content_changed": 57,
+ "n_content_changed": 60,
+ "stringmatch_match_among_content_changed": 10,
+ "urlhealth_flagged_among_still": 7,
+ "n_still": 1145
+}

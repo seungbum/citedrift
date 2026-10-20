@@ -1,0 +1,58 @@
+{
+ "strata_sizes": {
+  "still_supported": 1135,
+  "content_changed": 60,
+  "uncertain": 17,
+  "uncertain_demoted": 37,
+  "still_supported_demoted": 10
+ },
+ "per_stratum": {
+  "still_supported": {
+   "n": 29,
+   "then_loss": 0.06896551724137931,
+   "now_loss": 0.1724137931034483,
+   "excess": 0.10344827586206896
+  },
+  "uncertain": {
+   "n": 11,
+   "then_loss": 0.8181818181818182,
+   "now_loss": 0.45454545454545453,
+   "excess": -0.36363636363636365
+  },
+  "uncertain_demoted": {
+   "n": 15,
+   "then_loss": 0.26666666666666666,
+   "now_loss": 0.3333333333333333,
+   "excess": 0.06666666666666667
+  },
+  "content_changed": {
+   "n": 36,
+   "then_loss": 0.08333333333333333,
+   "now_loss": 0.5833333333333334,
+   "excess": 0.5
+  },
+  "still_supported_demoted": {
+   "n": 4,
+   "then_loss": 0.0,
+   "now_loss": 0.5,
+   "excess": 0.5
+  }
+ },
+ "excess_estimate": 0.11810853184137945,
+ "excess_ci": [
+  0.02863251257611861,
+  0.23735449175549406
+ ],
+ "macros": {
+  "ctlExcess": "12\\%",
+  "ctlExcessCI": "3--24\\%",
+  "ctlStillThen": "7\\%",
+  "ctlStillN": "29",
+  "ctlStillNow": "17\\%",
+  "ctlChangedThen": "8\\%",
+  "ctlChangedN": "36",
+  "ctlChangedNow": "58\\%",
+  "ctlChangedExcess": "50\\%",
+  "ctlStillExcess": "10\\%"
+ }
+}

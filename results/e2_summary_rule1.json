@@ -1,0 +1,210 @@
+{
+ "threshold": 0.7525,
+ "n_pairs": 2203,
+ "n_urls": 1473,
+ "link_states_urls": {
+  "ok": 974,
+  "moved": 141,
+  "filtered": 34,
+  "away": 70,
+  "blocked": 106,
+  "skipped": 36,
+  "dead": 75,
+  "transient": 32,
+  "soft404": 1,
+  "empty": 4
+ },
+ "link_groups_urls": {
+  "reachable": 1115,
+  "unverifiable": 212,
+  "lost": 146
+ },
+ "human": {
+  "classes": {
+   "still_supported": 1162,
+   "never_supported": 576,
+   "link_lost": 147,
+   "content_changed": 108,
+   "unverifiable": 210
+  },
+  "then_supported": 1627,
+  "checkable": 1417,
+  "lost_any": 255,
+  "lost_any_rate": 0.17995765702187722,
+  "lost_any_ci": [
+   0.16082924877471386,
+   0.20081669402425825
+  ],
+  "content_changed_with_evidence_missing": 97,
+  "by_engine": {
+   "bing_chat": {
+    "checkable": 379,
+    "lost_any": 58,
+    "rate": 0.15303430079155672,
+    "ci": [
+     0.12028424632044232,
+     0.19274756631433926
+    ],
+    "classes": {
+     "still_supported": 321,
+     "never_supported": 42,
+     "link_lost": 35,
+     "content_changed": 23,
+     "unverifiable": 54
+    }
+   },
+   "neeva": {
+    "checkable": 395,
+    "lost_any": 82,
+    "rate": 0.20759493670886076,
+    "ci": [
+     0.17050681765536319,
+     0.2503158848912117
+    ],
+    "classes": {
+     "still_supported": 313,
+     "never_supported": 170,
+     "content_changed": 41,
+     "link_lost": 41,
+     "unverifiable": 47
+    }
+   },
+   "perplexity": {
+    "checkable": 552,
+    "lost_any": 106,
+    "rate": 0.19202898550724637,
+    "ci": [
+     0.1613421004371692,
+     0.2269728439642574
+    ],
+    "classes": {
+     "still_supported": 446,
+     "link_lost": 65,
+     "unverifiable": 92,
+     "never_supported": 308,
+     "content_changed": 41
+    }
+   },
+   "you": {
+    "checkable": 91,
+    "lost_any": 9,
+    "rate": 0.0989010989010989,
+    "ci": [
+     0.052908040587209215,
+     0.17738752591525386
+    ],
+    "classes": {
+     "never_supported": 56,
+     "still_supported": 82,
+     "unverifiable": 17,
+     "content_changed": 3,
+     "link_lost": 6
+    }
+   }
+  },
+  "judge_miss_evidence_present": 124,
+  "content_changed_by_basis": {
+   "judge_then_and_evidence_gone": 62,
+   "judge_then_only": 10,
+   "evidence_gone_only": 36
+  }
+ },
+ "tool": {
+  "classes": {
+   "still_supported": 1068,
+   "never_supported": 728,
+   "link_lost": 137,
+   "content_changed": 83,
+   "unverifiable": 187
+  },
+  "then_supported": 1475,
+  "checkable": 1288,
+  "lost_any": 220,
+  "lost_any_rate": 0.17080745341614906,
+  "lost_any_ci": [
+   0.15124044416492602,
+   0.19233232822450627
+  ],
+  "content_changed_with_evidence_missing": 64,
+  "by_engine": {
+   "bing_chat": {
+    "checkable": 358,
+    "lost_any": 53,
+    "rate": 0.14804469273743018,
+    "ci": [
+     0.11499774126539003,
+     0.18856492261847518
+    ],
+    "classes": {
+     "still_supported": 305,
+     "never_supported": 64,
+     "link_lost": 38,
+     "content_changed": 15,
+     "unverifiable": 53
+    }
+   },
+   "neeva": {
+    "checkable": 354,
+    "lost_any": 63,
+    "rate": 0.17796610169491525,
+    "ci": [
+     0.14164276968146763,
+     0.22120380824574928
+    ],
+    "classes": {
+     "still_supported": 291,
+     "never_supported": 217,
+     "content_changed": 29,
+     "unverifiable": 41,
+     "link_lost": 34
+    }
+   },
+   "perplexity": {
+    "checkable": 492,
+    "lost_any": 95,
+    "rate": 0.19308943089430894,
+    "ci": [
+     0.1606422505862022,
+     0.23029227366509095
+    ],
+    "classes": {
+     "never_supported": 382,
+     "still_supported": 397,
+     "link_lost": 60,
+     "unverifiable": 78,
+     "content_changed": 35
+    }
+   },
+   "you": {
+    "checkable": 84,
+    "lost_any": 9,
+    "rate": 0.10714285714285714,
+    "ci": [
+     0.05739956319523237,
+     0.1912480024228802
+    ],
+    "classes": {
+     "never_supported": 65,
+     "unverifiable": 15,
+     "still_supported": 75,
+     "link_lost": 5,
+     "content_changed": 4
+    }
+   }
+  }
+ },
+ "judge_consistent_reachable": {
+  "n": 1046,
+  "content_changed": 72,
+  "rate": 0.06883365200764818,
+  "ci": [
+   0.055015638336229473,
+   0.0858071295937135
+  ]
+ },
+ "evidence_only": {
+  "n": 1243,
+  "fully_present": 954,
+  "none_present": 260
+ }
+}
