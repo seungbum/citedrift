@@ -5,7 +5,7 @@
 #   make e2         current-page features, link states, judge scores now, drift classes (GPU)
 #   make e3         end-to-end latency on 20 answers (network + GPU)
 #   make tables     calibration, baseline comparison, numbers.tex for the paper
-#   make explorer   app/static/explorer.json
+#   make explorer   app/static/explorer.json and replays.json
 #   make site       copy the static explorer to docs/ (GitHub Pages)
 #   make pdf        paper/main.pdf
 # Behind a TLS-intercepting proxy set REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt.
@@ -74,6 +74,7 @@ tables:
 explorer:
 	$(PY) src/export_explorer.py $(PAIRS) $(R)/e2_drift.jsonl $(R)/e2_summary.json $(R)/url_features.jsonl $(LIU) app/static/explorer.json \
 	  $(R)/baseline_urlhealth.jsonl
+	$(PY) src/export_replays.py app/static/explorer.json app/static/replays.json
 
 pdf:
 	cd paper && ../../.bin/tectonic -X compile main.tex > build.log 2>&1 || (cat build.log; exit 1)
@@ -81,8 +82,8 @@ pdf:
 check:
 	$(PY) src/check_paper.py paper
 
-site:  # static explorer for GitHub Pages (docs/, no check mode); docs/citedrift_demo.mp4 comes from src/make_video.py + src/add_narration.py
-	cp app/static/index.html app/static/app.js app/static/style.css app/static/explorer.json docs/ && touch docs/.nojekyll
+site:  # static explorer for GitHub Pages (docs/, no check mode); docs/citedrift_demo.mp4 comes from src/make_video.py
+	cp app/static/index.html app/static/app.js app/static/style.css app/static/explorer.json app/static/replays.json docs/ && touch docs/.nojekyll
 
 # Held-out validation on the Liu et al. TRAIN split (no design choice used it; see results/KPI_preregistration.md).
 # Network steps (fetch, browser) are listed for the record; scoring steps reproduce from the cached pages.

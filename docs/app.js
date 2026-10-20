@@ -144,9 +144,10 @@ async function probeLocal() {
   try { const r = await fetch("api/health"); LOCAL = r.ok ? await r.json() : false; } catch { LOCAL = false; }
   $("checkStatus").innerHTML = LOCAL && LOCAL.models
     ? `Local verifier is running on this machine${LOCAL.explain ? " (explanations available)" : ""}.`
-    : `<span class="warn">This is the static explorer: checking needs the local server.</span> Run
+    : `<span class="warn">This is the static explorer: a live check needs the local server.</span> Run
        <code>python app/server.py</code> from the repository (one GPU with ~4&nbsp;GB, or ~10&nbsp;GB with explanations) and open
-       <code>http://127.0.0.1:8765</code>.`;
+       <code>http://127.0.0.1:8765</code>. Until then, replay a recorded check below.`;
+  $("replayBox").classList.toggle("hidden", !!(LOCAL && LOCAL.models) || !REPLAYS.replays.length);
   $("explain").disabled = !(LOCAL && LOCAL.explain);
   $("datasetThen").disabled = !(LOCAL && LOCAL.dataset_then);
   $("browserCheck").disabled = !(LOCAL && LOCAL.browser);
@@ -215,6 +216,47 @@ $("runBtn").onclick = async () => {
 };
 
 
+// ---------- recorded checks (static explorer) ----------
+let REPLAYS = {replays: [], cases: []};
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+$("replayBtn").onclick = async () => {
+  const r = REPLAYS.replays[+$("replaySel").value];
+  if (!r) return;
+  $("answer").value = r.answer; $("urls").value = r.urls.join("\n"); $("citedAt").value = r.cited_at;
+  $("checkOut").innerHTML = `<div class="panel note" id="progress"></div><div id="cards"></div>`;
+  $("replayBtn").disabled = true;
+  const cnt = {}, items = [];
+  const progress = (msg) => { $("progress").innerHTML = msg; };
+  const summary = () => Object.entries(cnt).map(([k, v]) => `${CLASSES[k].icon} ${CLASSES[k].label} ${v}`).join(" · ");
+  progress(`Replaying: checking ${r.pairs.length} statement–citation pairs on ${r.urls.length} page(s)…`);
+  for (const [i, url] of r.urls.entries()) {
+    const host = (() => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return url; } })();
+    const mine = r.pairs.filter((x) => x.url === url);
+    progress(`Page ${i + 1} of ${r.urls.length}: <b>${esc(host)}</b> — ${esc(STATES[mine[0].link_state] || mine[0].link_state)}. Judging… ${summary()}`);
+    await sleep(900);
+    for (const x of mine) {
+      items.push(x); cnt[x.class] = (cnt[x.class] || 0) + 1;
+      items.sort((p, q) => p.order[0] - q.order[0] || p.order[1] - q.order[1]);
+      $("cards").innerHTML = items.map((y) => checkCard(y).replace('class="card ', y === x ? 'class="card fresh ' : 'class="card ')).join("");
+      await sleep(350);
+    }
+  }
+  progress(`Replayed a recorded check: ${items.length} statement–citation pairs, ${summary()}`);
+  $("replayBtn").disabled = false;
+};
+function cases() {
+  $("cases").innerHTML = REPLAYS.cases.map((c, i) => `<button class="case ${c.class}" data-i="${i}">
+    <span class="cls" style="color:var(${CLASSES[c.class].color})">${CLASSES[c.class].icon} ${CLASSES[c.class].label}</span>${esc(c.title)}</button>`).join("");
+  document.querySelectorAll(".case").forEach((el) => {
+    el.onclick = () => {
+      const c = REPLAYS.cases[+el.dataset.i];
+      for (const id of ["fEngine", "fClass", "fState", "fLabel", "fUh"]) $(id).value = "";
+      $("fText").value = c.statement.slice(0, 60); filter();
+      $("list").scrollIntoView({behavior: "smooth"});
+    };
+  });
+}
+
 // ---------- boot ----------
 fetch("explorer.json").then((r) => r.json()).then((d) => {
   DATA = d;
@@ -226,4 +268,11 @@ fetch("explorer.json").then((r) => r.json()).then((d) => {
   $("aboutBody").innerHTML = d.about;
   $("foot").innerHTML = d.footer;
   summary(); filter();
+  return fetch("replays.json").then((r) => (r.ok ? r.json() : REPLAYS)).catch(() => REPLAYS);
+}).then((r) => {
+  REPLAYS = r || REPLAYS;
+  $("replaySel").innerHTML = REPLAYS.replays.map((x, i) =>
+    `<option value="${i}">${esc(ENGINES[x.engine] || x.engine)}: “${esc(x.query)}” (${x.pairs.length} citations)</option>`).join("");
+  cases();
+  if (LOCAL === false) $("replayBox").classList.toggle("hidden", !REPLAYS.replays.length);
 });

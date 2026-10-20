@@ -80,3 +80,16 @@ table.t th, table.t td { border-bottom: 1px solid var(--grid); padding: 4px 8px;
 table.t th:first-child, table.t td:first-child { text-align: left; }
 .hidden { display: none; }
 footer { color: var(--muted); font-size: 12px; padding: 0 28px 30px; max-width: 1200px; }
+.cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 8px; }
+.case { text-align: left; font: inherit; font-size: 14px; color: var(--ink); background: var(--page); cursor: pointer;
+  border: 1px solid var(--ring); border-left: 4px solid var(--c-never); border-radius: 8px; padding: 10px 12px; }
+.case.content_changed { border-left-color: var(--c-changed); } .case.link_lost { border-left-color: var(--c-lost); }
+.case:hover { outline: 2px solid var(--ink); outline-offset: 1px; }
+.case .cls { display: block; margin-bottom: 3px; }
+.replay { border: 1px dashed var(--axis); border-radius: 8px; padding: 4px 12px 2px; margin: 10px 0 6px; }
+.replay .row { display: flex; gap: 10px; flex-wrap: wrap; }
+.replay select { font: inherit; padding: 6px 8px; border: 1px solid var(--axis); border-radius: 6px; background: var(--surface);
+  color: var(--ink); flex: 1; min-width: 220px; }
+.card.fresh { animation: fresh 0.6s ease-out; }
+@keyframes fresh { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .card.fresh { animation: none; } }

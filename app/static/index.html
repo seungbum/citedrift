@@ -12,7 +12,7 @@
   <h1>CiteDrift</h1>
   <p>Checks every statement–citation pair of an AI search answer twice: against the page as it was when it was cited,
   and against the page today. Everything runs locally on one consumer GPU.</p>
-  <p class="links"><a href="https://seungbum.github.io/citedrift/citedrift_demo.mp4" target="_blank" rel="noopener">&#9654; Watch the demo video (74 s)</a>
+  <p class="links"><a href="https://seungbum.github.io/citedrift/citedrift_demo.mp4" target="_blank" rel="noopener">&#9654; Watch the demo video (2 min)</a>
   <a href="https://github.com/seungbum/citedrift" target="_blank" rel="noopener">Code and data on GitHub</a></p>
 </header>
 <nav>
@@ -25,6 +25,10 @@
     <div class="panel">
       <div class="hero" id="hero"></div>
       <div class="note" id="uhNote" style="margin-top:12px"></div>
+    </div>
+    <div class="panel">
+      <div class="note"><b>Three citations that drifted</b> (click one to open it below)</div>
+      <div class="cases" id="cases"></div>
     </div>
     <div class="panel">
       <div class="note" id="barTitle"></div>
@@ -48,6 +52,12 @@
   <section id="check" class="hidden">
     <div class="panel">
       <div id="checkStatus" class="note"></div>
+      <div id="replayBox" class="replay hidden">
+        <label class="f" for="replaySel">No GPU here? Replay a recorded check of a real 2023 AI search answer</label>
+        <div class="row"><select id="replaySel"></select><button class="act" id="replayBtn">Replay check</button></div>
+        <p class="note">Recorded outcomes of the October 2026 re-check, played back page by page (a live check
+        gave the same outcome for 93% of pairs). A live check of your own answer needs the local server.</p>
+      </div>
       <label class="f" for="answer">Answer text, with citation markers like [1] [2]</label>
       <textarea id="answer" rows="7"></textarea>
       <label class="f" for="urls">Cited URLs, one per line, in marker order ([1] is the first line)</label>
