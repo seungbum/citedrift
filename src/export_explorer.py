@@ -4,10 +4,11 @@ Contains per pair: engine, query, statement, URL, 2023 human label, the
 annotator's 2023 evidence (released with Liu et al. 2023 under MIT; cut to
 400 characters), link state and drift class, judge scores, and the single
 sentence of the current page closest to that evidence (at most 300
-characters). No page bodies are included.
+characters), and the verdict of the urlhealth link checker for the URL
+(NOT_RUN when it was not run). No page bodies are included.
 
 Usage: .venv/bin/python -I src/export_explorer.py <pairs> <drift_jsonl> <drift_summary> <url_features> \
-          <liu_dir> <out_json>
+          <liu_dir> <out_json> <urlhealth_jsonl>
 """
 import gzip, json, os, re, sys
 
@@ -26,7 +27,8 @@ def sentences(text):
 
 
 def main():
-    pairs_p, drift_p, summ_p, feat_p, liu, out_p = sys.argv[1:7]
+    pairs_p, drift_p, summ_p, feat_p, liu, out_p, uh_p = sys.argv[1:8]
+    uh = {r["url"]: r["url_status"] for r in map(json.loads, open(uh_p))}
     pairs = {(r["split"], r["idx"]): r for r in map(json.loads, open(pairs_p))}
     key = {r["url"]: r["key"] for r in map(json.loads, open(feat_p))}
     summ = json.load(open(summ_p))
@@ -52,7 +54,8 @@ def main():
         items.append({"id": f'{d["split"]}-{d["idx"]}', "e": d["engine"], "q": p["query"], "s": p["statement"],
                       "u": d["url"], "l": d["label_2023"], "ev23": re.sub(r"\s+", " ", ev)[:EV_CHARS],
                       "ls": d["link_state"], "lg": d["link_group"], "c": d["class_human"],
-                      "p23": round(d["score_2023"], 3), "pn": round(max(pn), 3) if pn else None, "evn": evn})
+                      "p23": round(d["score_2023"], 3), "pn": round(max(pn), 3) if pn else None, "evn": evn,
+                      "uh": uh.get(d["url"], "NOT_RUN")})
     order = {"content_changed": 0, "link_lost": 1, "uncertain": 2, "still_supported": 3, "unverifiable": 4,
              "never_supported": 5}
     items.sort(key=lambda x: (order[x["c"]], x["id"]))

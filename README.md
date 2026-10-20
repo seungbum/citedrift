@@ -5,7 +5,10 @@ against the page as it was when cited and against the page today, and gets one o
 **still supported**, **content changed**, **uncertain**, **link lost**, **could not check**, **not supported when cited**.
 Everything runs locally with open models on one consumer GPU (tested on an RTX 5070, 12 GB).
 
-- `app/` web app: static explorer of precomputed results (`app/static/`) and a local check mode (`app/server.py`).
+**Try it:** [public explorer](https://seungbum.github.io/citedrift/) · [74-second demo video](https://seungbum.github.io/citedrift/citedrift_demo.mp4)
+
+- `app/` web app: static explorer of precomputed results (`app/static/`; `make site` copies it to `docs/` for GitHub Pages)
+  and a local check mode (`app/server.py`).
 - `src/citedrift/` the library: link state (`linkstate.py`), text extraction (`textutil.py`), support judge (`judge.py`),
   optional explainer (`explain.py`), end-to-end checker (`pipeline.py`).
 - `src/` experiment scripts; `Makefile` maps every number in the paper to a script (see `make help` comments at the top).

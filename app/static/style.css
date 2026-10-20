@@ -20,6 +20,8 @@ body { margin: 0; background: var(--page); color: var(--ink); font-size: 15px; l
 header { padding: 18px 28px 6px; }
 header h1 { margin: 0; font-size: 22px; }
 header p { margin: 4px 0 0; color: var(--ink2); max-width: 900px; }
+header p.links { display: flex; gap: 4px 18px; flex-wrap: wrap; font-size: 14px; margin-top: 6px; }
+header p.links a { color: var(--c-still); }
 nav { display: flex; gap: 4px; padding: 10px 28px 0; border-bottom: 1px solid var(--grid); }
 nav button { border: 0; background: none; padding: 8px 14px; font: inherit; color: var(--ink2); cursor: pointer;
   border-bottom: 2px solid transparent; }

@@ -12,6 +12,8 @@
   <h1>CiteDrift</h1>
   <p>Checks every statement–citation pair of an AI search answer twice: against the page as it was when it was cited,
   and against the page today. Everything runs locally on one consumer GPU.</p>
+  <p class="links"><a href="https://seungbum.github.io/citedrift/citedrift_demo.mp4" target="_blank" rel="noopener">&#9654; Watch the demo video (74 s)</a>
+  <a href="https://github.com/seungbum/citedrift" target="_blank" rel="noopener">Code and data on GitHub</a></p>
 </header>
 <nav>
   <button data-tab="explore" class="on">Explore 2023 → 2026</button>
@@ -22,6 +24,7 @@
   <section id="explore">
     <div class="panel">
       <div class="hero" id="hero"></div>
+      <div class="note" id="uhNote" style="margin-top:12px"></div>
     </div>
     <div class="panel">
       <div class="note" id="barTitle"></div>
@@ -33,6 +36,7 @@
       <select id="fEngine"><option value="">All engines</option></select>
       <select id="fClass"><option value="">All outcomes</option></select>
       <select id="fState"><option value="">All link states</option></select>
+      <select id="fUh"><option value="">All urlhealth verdicts</option></select>
       <select id="fLabel"><option value="">All 2023 labels</option><option>complete_support</option><option>partial_support</option><option>no_support</option></select>
       <input id="fText" type="search" placeholder="Search statement, query or domain">
       <span class="count" id="count"></span>

@@ -11,6 +11,9 @@ const BAR = ["still_supported", "content_changed", "uncertain", "link_lost", "un
 const STATES = {ok: "same URL", moved: "moved (same content)", dead: "dead", soft404: "error page",
   away: "redirected elsewhere", blocked: "bot wall", filtered: "network filter", skipped: "not requested",
   transient: "server/TLS error"};
+const UH = {LIVE: "live", DEAD: "dead", LIKELY_HALLUCINATED: "likely hallucinated", UNKNOWN: "unknown",
+  NOT_RUN: "not run"};  // urlhealth (Rao et al. 2026), a link checker, run once on 2026-10-15
+const LOST = ["link_lost", "content_changed"];
 const ENGINES = {bing_chat: "Bing Chat", neeva: "NeevaAI", perplexity: "Perplexity", you: "YouChat"};
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
@@ -61,6 +64,13 @@ function summary() {
       annotator's evidence is gone. ${pct(un / s.checkable)} more are uncertain. Flags are evidence for a reader, not verdicts.</div></div>
     <div><div class="num">${s.n_pairs.toLocaleString()}</div><div class="lab">statement–citation pairs from four
       generative search engines (${m.source}), ${s.n_urls.toLocaleString()} distinct URLs.</div></div>`;
+  const lost = DATA.items.filter((it) => it.l === "complete_support" && LOST.includes(it.c));
+  const live = lost.filter((it) => it.uh === "LIVE").length;
+  $("uhNote").innerHTML = `A link checker misses most of these losses: urlhealth reports <b>${live} of the ${lost.length}</b>
+    citations that lost support (link lost or content changed) as live.
+    <button class="act ghost" id="uhBtn">Show these ${live}</button>`;
+  $("uhBtn").onclick = () => { $("fEngine").value = ""; $("fClass").value = "lost"; $("fState").value = ""; $("fUh").value = "LIVE";
+    $("fLabel").value = "complete_support"; $("fText").value = ""; filter(); $("list").scrollIntoView({behavior: "smooth"}); };
   $("barTitle").textContent = `Outcome in ${m.now_label} for citations judged fully supporting in ${m.then_label}, by engine. Click a segment to filter.`;
   $("legend").innerHTML = BAR.map((c) => `<span><span class="sw" style="background:var(${CLASSES[c].color})"></span>${CLASSES[c].icon} ${CLASSES[c].label}</span>`).join("");
   const rows = [["all", "All engines"], ...Object.keys(s.by_engine).map((e) => [e, ENGINES[e] || e])];
@@ -80,7 +90,7 @@ function summary() {
   document.querySelectorAll(".seg").forEach((el) => {
     el.onmousemove = (ev) => tip(ev, el.dataset.tip);
     el.onmouseleave = untip;
-    el.onclick = () => { $("fEngine").value = el.dataset.e === "all" ? "" : el.dataset.e; $("fClass").value = el.dataset.c;
+    el.onclick = () => { $("fEngine").value = el.dataset.e === "all" ? "" : el.dataset.e; $("fClass").value = el.dataset.c; $("fUh").value = "";
       $("fLabel").value = "complete_support"; filter(); $("list").scrollIntoView({behavior: "smooth"}); };
   });
 }
@@ -100,6 +110,7 @@ function card(it) {
       <span class="pill">2023 annotator: <b>${esc(it.l.replace("_", " "))}</b></span>
       <span class="pill">judge 2023 <b>${sc(it.p23)}</b></span>
       <span class="pill">link now: <b>${esc(STATES[it.ls] || it.ls)}</b></span>
+      <span class="pill">urlhealth: <b>${esc(UH[it.uh] || it.uh)}</b></span>
       <span class="pill">judge now <b>${sc(it.pn)}</b></span></div>
     <div class="tl"><div><h4>Evidence in ${DATA.meta.then_label} (annotator)</h4><div class="box">${then}</div></div>
       <div><h4>Closest sentence in ${DATA.meta.now_label}</h4><div class="box">${now}</div></div></div>
@@ -108,9 +119,10 @@ function card(it) {
 }
 
 function filter() {
-  const e = $("fEngine").value, c = $("fClass").value, s = $("fState").value, l = $("fLabel").value;
+  const e = $("fEngine").value, c = $("fClass").value, s = $("fState").value, l = $("fLabel").value, u = $("fUh").value;
   const t = $("fText").value.trim().toLowerCase();
-  view = DATA.items.filter((it) => (!e || it.e === e) && (!c || it.c === c) && (!s || it.ls === s) && (!l || it.l === l) &&
+  view = DATA.items.filter((it) => (!e || it.e === e) && (!c || it.c === c || (c === "lost" && LOST.includes(it.c))) &&
+    (!s || it.ls === s) && (!l || it.l === l) && (!u || it.uh === u) &&
     (!t || (it.s + " " + it.q + " " + it.u).toLowerCase().includes(t)));
   shown = 0; $("list").innerHTML = ""; more();
 }
@@ -122,7 +134,7 @@ function more() {
   $("moreBtn").classList.toggle("hidden", shown >= view.length);
 }
 $("moreBtn").onclick = more;
-for (const id of ["fEngine", "fClass", "fState", "fLabel"]) $(id).onchange = filter;
+for (const id of ["fEngine", "fClass", "fState", "fLabel", "fUh"]) $(id).onchange = filter;
 $("fText").oninput = () => { clearTimeout(window._t); window._t = setTimeout(filter, 200); };
 
 // ---------- local check mode ----------
@@ -208,6 +220,8 @@ fetch("explorer.json").then((r) => r.json()).then((d) => {
   DATA = d;
   for (const e of Object.keys(d.summary.by_engine)) $("fEngine").insertAdjacentHTML("beforeend", `<option value="${e}">${ENGINES[e] || e}</option>`);
   for (const c of [...BAR, "never_supported"]) $("fClass").insertAdjacentHTML("beforeend", `<option value="${c}">${CLASSES[c].label}</option>`);
+  $("fClass").insertAdjacentHTML("beforeend", `<option value="lost">Lost support (link lost or content changed)</option>`);
+  for (const [k, v] of Object.entries(UH)) $("fUh").insertAdjacentHTML("beforeend", `<option value="${k}">urlhealth: ${v}</option>`);
   for (const [k, v] of Object.entries(STATES)) $("fState").insertAdjacentHTML("beforeend", `<option value="${k}">${v}</option>`);
   $("aboutBody").innerHTML = d.about;
   $("foot").innerHTML = d.footer;
